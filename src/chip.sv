@@ -11,6 +11,9 @@ module my_chip (
     // TODO: remove the counter design and use this module to insert your own design
     // DO NOT change the I/O header of this design
 
-    RangeFinder find(.data_in(io_in), .io_out(range));
+    RangeFinder find(.clock(clock), .reset(reset), 
+                    .go(io_in[1]), .finish(io_in[2]),
+                    .data_in(io_in[11:3]), .range(io_out[11:2]),
+                    .debug_error(io_out[1]));
 
 endmodule
