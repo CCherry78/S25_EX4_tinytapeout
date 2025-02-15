@@ -35,6 +35,9 @@ module RangeFinder
     always_comb begin
         g_ld = 0;
         l_ld = 0;
+        range = 0;
+        debug_error = 0;
+        nextState = WAIT;
 
         case (state)
             WAIT: begin
